@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  postgres:
+    container_name: postgres_SuperMarket
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: SuperMarket
+    ports:
+      - "5432:5432"
+  pgadmin:
+    container_name: pgadmin4_SuperMarket
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: super@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5055:80"
